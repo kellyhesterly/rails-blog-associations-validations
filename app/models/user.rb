@@ -1,6 +1,5 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
+    validates :name, presence: true, uniqueness: true
+
     has_many :posts
-  
-    validates_uniqueness_of :name
-    validates_presence_of :name
-  end
+end
